@@ -29,13 +29,11 @@ Each **text_entry** is used for semantic searching
 
 #### Prompt passed into the GPT API was
 ```bash
- I have retrieved a line from a Shakespeare database based on a KNN search with the query '{QUERY}'.
-        Here is the closest result:
-
-        Score: {hit['_score']}
-        Text: {hit['_source']['text_entry']}
-
-        Please provide an analysis or interpretation of the retrieved line in the context of Shakespeare's works, focusing on themes and language style.
+I have retrieved a line from a Shakespeare database based on a KNN search with the query '{QUERY}'.
+Here is the closest result:
+Score: {hit['_score']}
+Text: {hit['_source']['text_entry']}
+Please provide an analysis or interpretation of the retrieved line in the context of Shakespeare's works, focusing on themes and language style.
 ```
 
 # Getting Started
