@@ -38,7 +38,9 @@ Each **text_entry** is used for semantic searching
         Please provide an analysis or interpretation of the retrieved line in the context of Shakespeare's works, focusing on themes and language style.
 ```
 
-# Explaination of the Structure
+# Getting Started
+- Create the elastic search account to access the cloud platform <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api-create-api-key.html"> here </a>
+- Create the OpenAI API key <a href="https://platform.openai.com/settings/organization/api-keys"> here </a>
 ```bash
 ├── app.py
 ├── mp3_files
@@ -47,7 +49,7 @@ Each **text_entry** is used for semantic searching
 - **Front End** : The front end code is present is in the my-app dir , it consists of the chat-interface.tsx which is  a type script file consists of the chat UI as shown below.It provides an interface working with the model.
 - **Back End** : The backend is code is present in app.py file.It consists of the openai api,and the main elastic search based indexing using semantic search as shown in the
 <a href="https://github.com/elastic/elasticsearch-labs/blob/main/notebooks/search/00-quick-start.ipynb"/>example</a>.
-# Pre-requirements
+
 - **Front End**
 ```bash
 cd my-app
