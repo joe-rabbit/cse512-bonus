@@ -1,6 +1,43 @@
 # Introduction
 This is a working RAG (Retrieval-Augmented Generation) model built using Elasticsearch and OpenAI's GPT API. It indexes a Shakespearean dataset and provides explanations for prompts in Shakespearean English.
-This project is created for CSE 512-extra credits requirements.Generative AI was used to creating the project.It only performs semantic searching on text. No other searching is performed
+This project is created for CSE 512-extra credits requirements.Generative AI was used to creating the project.It only performs semantic searching on text. No other searching is performed.
+#### Data used for this project can be found <a href="https://raw.githubusercontent.com/linuxacademy/content-elasticsearch-deep-dive/refs/heads/master/sample_data/shakespeare.json"> here </a>
+The provided content represents a data format intended for ingestion into Elasticsearch, a distributed search engine and analytics platform. Each document corresponds to an entry (such as an act, scene, or line) from Shakespeare's play "Henry IV." Here's a detailed explanation of the structure
+#### Key Elements:
+Index Directive:
+Example:
+```bash
+    {"index":{"_index":"shakespeare","_id":0}}
+```
+-  **_index**: Specifies the Elasticsearch index where the document will be stored (shakespeare in this case).
+- **_id**: The unique identifier for the document within the index. Each document has its own ID, incrementing sequentially in this example.
+
+#### Document Content:
+Example:
+```bash
+        {"type":"act","line_id":1,"play_name":"Henry IV", "speech_number":"","line_number":"","speaker":"","text_entry":"ACT I"}
+```
+Represents the data for a specific entry. Key fields include:
+- **type**: The category of the entry (e.g., act, scene, or line).
+- **line_id**: A unique identifier for each line or entry in the play.
+- **play_name**: The name of the play (Henry IV in this case).
+- **speech_number**: Denotes a speech's sequence. It’s empty for entries like acts or scenes but populated for dialogue lines.
+- **line_number**: The location of the line within the play, formatted as Act.Scene.Line.
+- **speaker**: The character delivering the line (empty for acts or scenes).
+- **text_entry**: The actual content of the entry (e.g., dialogue, act, or scene description).
+Each **text_entry** is used for semantic searching
+
+#### Prompt passed into the GPT API was
+```bash
+ I have retrieved a line from a Shakespeare database based on a KNN search with the query '{QUERY}'.
+        Here is the closest result:
+
+        Score: {hit['_score']}
+        Text: {hit['_source']['text_entry']}
+
+        Please provide an analysis or interpretation of the retrieved line in the context of Shakespeare's works, focusing on themes and language style.
+```
+
 # Explaination of the Structure
 ```bash
 ├── app.py
