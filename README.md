@@ -67,7 +67,10 @@ pip install elasticsearch openai flask gtts
 # Preview of the Working Application
 ![Preview of Application](https://github.com/user-attachments/assets/34977cdc-8334-47c2-a45c-94c94174ec88)
 ### Demonstration video
-![View the demo here](https://drive.google.com/file/d/1MfC-Cd5ESQty5iOH7nSBsVgup6UmD_jE/view?usp=sharing)
+[![Watch the video](https://img.youtube.com/vi/mMy6_YXWp2E/12.jpg)](https://youtu.be/mMy6_YXWp2E)
+
+
+
 - Note: the error in the video is due to the fact that there was no speaker built in on the system this project was designed on so I was unable to try out the mp3 file on the same system.However, there exists an mp3 file for demonstration purposes.
 # Frameworks
 - **Front End**: Built using Next.js (requires Node.js 18 or above installed on the system)
